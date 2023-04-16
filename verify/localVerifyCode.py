@@ -6,11 +6,11 @@ if TickerConfig.AUTO_CODE_TYPE == 2:
     import os
     import cv2
     import numpy as np
-    from keras import models, backend
+    from tensorflow.keras import models, backend
     import tensorflow as tf
     from verify import pretreatment
     from verify.mlearn_for_image import preprocess_input
-
+    os.environ['TF_KERAS'] = '1'
     graph = tf.get_default_graph()
 
 PATH = lambda p: os.path.abspath(

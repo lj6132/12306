@@ -64,6 +64,9 @@ class submitOrderRequest:
         """
         submit_station_url = self.session.urls["submit_station_url"]
         submitResult = self.session.httpClint.send(submit_station_url, self.data_apr())
+        print("submit_station_url: {}".format(submit_station_url))
+        print("data_apr: {}".format(self.data_apr()))
+        print("data: {}".format(submitResult))
         if 'data' in submitResult and submitResult['data']:
             if submitResult['data'] == 'N':
                 coi = checkOrderInfo(self.session, self.train_no, self.set_type, self.passengerTicketStrList,
